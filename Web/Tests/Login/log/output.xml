@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.3 on win32)" generated="20201110 22:49:55.751" rpa="false">
+<suite id="s1" name="Login" source="c:\Altoro\Web\Tests\Login.robot">
+<test id="s1-t1" name="Validando o acesso ao internet banking com conta funcionario pelo (Online banking login)">
+<kw name="Novo Acesso" library="base" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201110 22:49:56.223" level="INFO">Opening browser 'chrome' to base url 'http://altoromutual.com:8080/ chrome'.</msg>
+<status status="PASS" starttime="20201110 22:49:56.222" endtime="20201110 22:50:01.140"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:49:56.222" endtime="20201110 22:50:01.140"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:AccountLink</arg>
+</arguments>
+<msg timestamp="20201110 22:50:01.142" level="INFO">Clicking element 'id:AccountLink'.</msg>
+<status status="PASS" starttime="20201110 22:50:01.141" endtime="20201110 22:50:01.458"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:uid</arg>
+<arg>admin</arg>
+</arguments>
+<msg timestamp="20201110 22:50:01.474" level="INFO">Typing text 'admin' into text field 'id:uid'.</msg>
+<status status="PASS" starttime="20201110 22:50:01.473" endtime="20201110 22:50:01.595"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:passw</arg>
+<arg>admin</arg>
+</arguments>
+<msg timestamp="20201110 22:50:01.596" level="INFO">Typing text 'admin' into text field 'id:passw'.</msg>
+<status status="PASS" starttime="20201110 22:50:01.596" endtime="20201110 22:50:01.737"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[name="btnSubmit"]</arg>
+</arguments>
+<msg timestamp="20201110 22:50:01.739" level="INFO">Clicking button 'css:input[name="btnSubmit"]'.</msg>
+<status status="PASS" starttime="20201110 22:50:01.738" endtime="20201110 22:50:02.273"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>xpath://div[@class="fl"]</arg>
+</arguments>
+<assign>
+<var>${bem_vindo}</var>
+</assign>
+<msg timestamp="20201110 22:50:02.300" level="INFO">${bem_vindo} = &lt;selenium.webdriver.remote.webelement.WebElement (session="e0fbad8d50def6e93d4b591b5b77efa1", element="d3d1519c-0087-4264-b2c1-ee7cc5d4622a")&gt;</msg>
+<status status="PASS" starttime="20201110 22:50:02.274" endtime="20201110 22:50:02.301"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${bem_vindo.text}</arg>
+<arg>Hello Admin User</arg>
+</arguments>
+<status status="PASS" starttime="20201110 22:50:02.301" endtime="20201110 22:50:02.382"></status>
+</kw>
+<kw name="Encerra Acesso" library="base" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201110 22:50:02.696" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201110 22:50:02.384" endtime="20201110 22:50:02.697"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201110 22:50:02.697" endtime="20201110 22:50:04.988"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:50:02.383" endtime="20201110 22:50:04.988"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:49:56.220" endtime="20201110 22:50:04.989" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Validando o acesso ao internet banking com conta funcionario pelo (Sign In)">
+<kw name="Novo Acesso" library="base" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201110 22:50:04.993" level="INFO">Opening browser 'chrome' to base url 'http://altoromutual.com:8080/ chrome'.</msg>
+<status status="PASS" starttime="20201110 22:50:04.993" endtime="20201110 22:50:16.402"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:50:04.992" endtime="20201110 22:50:16.403"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:LoginLink</arg>
+</arguments>
+<msg timestamp="20201110 22:50:16.405" level="INFO">Clicking element 'id:LoginLink'.</msg>
+<status status="PASS" starttime="20201110 22:50:16.405" endtime="20201110 22:50:16.749"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:uid</arg>
+<arg>admin</arg>
+</arguments>
+<msg timestamp="20201110 22:50:16.752" level="INFO">Typing text 'admin' into text field 'id:uid'.</msg>
+<status status="PASS" starttime="20201110 22:50:16.751" endtime="20201110 22:50:16.896"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:passw</arg>
+<arg>admin</arg>
+</arguments>
+<msg timestamp="20201110 22:50:16.898" level="INFO">Typing text 'admin' into text field 'id:passw'.</msg>
+<status status="PASS" starttime="20201110 22:50:16.897" endtime="20201110 22:50:17.076"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[name="btnSubmit"]</arg>
+</arguments>
+<msg timestamp="20201110 22:50:17.077" level="INFO">Clicking button 'css:input[name="btnSubmit"]'.</msg>
+<status status="PASS" starttime="20201110 22:50:17.076" endtime="20201110 22:50:17.563"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>xpath://div[@class="fl"]</arg>
+</arguments>
+<assign>
+<var>${bem_vindo}</var>
+</assign>
+<msg timestamp="20201110 22:50:17.590" level="INFO">${bem_vindo} = &lt;selenium.webdriver.remote.webelement.WebElement (session="465bf18366bf4bfad402b94c2d129420", element="3465e4b3-574c-4c52-a6de-01fd8f60addf")&gt;</msg>
+<status status="PASS" starttime="20201110 22:50:17.564" endtime="20201110 22:50:17.590"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${bem_vindo.text}</arg>
+<arg>Hello Admin User</arg>
+</arguments>
+<status status="PASS" starttime="20201110 22:50:17.590" endtime="20201110 22:50:17.651"></status>
+</kw>
+<kw name="Encerra Acesso" library="base" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201110 22:50:17.962" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201110 22:50:17.653" endtime="20201110 22:50:17.963"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201110 22:50:17.963" endtime="20201110 22:50:20.281"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:50:17.653" endtime="20201110 22:50:20.282"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:50:04.991" endtime="20201110 22:50:20.282" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Validando o acesso ao internet banking com conta funcionario com senha invalida">
+<kw name="Novo Acesso" library="base" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201110 22:50:20.286" level="INFO">Opening browser 'chrome' to base url 'http://altoromutual.com:8080/ chrome'.</msg>
+<status status="PASS" starttime="20201110 22:50:20.286" endtime="20201110 22:50:24.672"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:50:20.285" endtime="20201110 22:50:24.672"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:AccountLink</arg>
+</arguments>
+<msg timestamp="20201110 22:50:24.673" level="INFO">Clicking element 'id:AccountLink'.</msg>
+<status status="PASS" starttime="20201110 22:50:24.673" endtime="20201110 22:50:24.975"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:uid</arg>
+<arg>admin</arg>
+</arguments>
+<msg timestamp="20201110 22:50:24.977" level="INFO">Typing text 'admin' into text field 'id:uid'.</msg>
+<status status="PASS" starttime="20201110 22:50:24.976" endtime="20201110 22:50:25.103"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:passw</arg>
+<arg>aooba</arg>
+</arguments>
+<msg timestamp="20201110 22:50:25.104" level="INFO">Typing text 'aooba' into text field 'id:passw'.</msg>
+<status status="PASS" starttime="20201110 22:50:25.104" endtime="20201110 22:50:25.243"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[name="btnSubmit"]</arg>
+</arguments>
+<msg timestamp="20201110 22:50:25.244" level="INFO">Clicking button 'css:input[name="btnSubmit"]'.</msg>
+<status status="PASS" starttime="20201110 22:50:25.244" endtime="20201110 22:50:25.882"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>id:_ctl0__ctl0_Content_Main_message</arg>
+</arguments>
+<assign>
+<var>${senha}</var>
+</assign>
+<msg timestamp="20201110 22:50:25.908" level="INFO">${senha} = &lt;selenium.webdriver.remote.webelement.WebElement (session="55ef84aaf635fd67f6d33bdcd6e75a82", element="53aff8d6-e92d-462a-ab0d-9ae76c0e7edf")&gt;</msg>
+<status status="PASS" starttime="20201110 22:50:25.885" endtime="20201110 22:50:25.908"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${senha.text}</arg>
+<arg>Login Failed: We're sorry, but this username or password was not found in our system. Please try again.</arg>
+</arguments>
+<status status="PASS" starttime="20201110 22:50:25.908" endtime="20201110 22:50:25.931"></status>
+</kw>
+<kw name="Encerra Acesso" library="base" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201110 22:50:26.254" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201110 22:50:25.933" endtime="20201110 22:50:26.254"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201110 22:50:26.254" endtime="20201110 22:50:28.503"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:50:25.932" endtime="20201110 22:50:28.503"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:50:20.284" endtime="20201110 22:50:28.504" critical="yes"></status>
+</test>
+<test id="s1-t4" name="Validando o acesso ao internet banking com conta funcionario com senha invalida">
+<kw name="Novo Acesso" library="base" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201110 22:50:28.509" level="INFO">Opening browser 'chrome' to base url 'http://altoromutual.com:8080/ chrome'.</msg>
+<status status="PASS" starttime="20201110 22:50:28.508" endtime="20201110 22:50:33.013"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:50:28.508" endtime="20201110 22:50:33.014"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:LoginLink</arg>
+</arguments>
+<msg timestamp="20201110 22:50:33.015" level="INFO">Clicking element 'id:LoginLink'.</msg>
+<status status="PASS" starttime="20201110 22:50:33.015" endtime="20201110 22:50:33.320"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:uid</arg>
+<arg>admin</arg>
+</arguments>
+<msg timestamp="20201110 22:50:33.332" level="INFO">Typing text 'admin' into text field 'id:uid'.</msg>
+<status status="PASS" starttime="20201110 22:50:33.331" endtime="20201110 22:50:33.453"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:passw</arg>
+<arg>aooba</arg>
+</arguments>
+<msg timestamp="20201110 22:50:33.454" level="INFO">Typing text 'aooba' into text field 'id:passw'.</msg>
+<status status="PASS" starttime="20201110 22:50:33.453" endtime="20201110 22:50:33.593"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[name="btnSubmit"]</arg>
+</arguments>
+<msg timestamp="20201110 22:50:33.594" level="INFO">Clicking button 'css:input[name="btnSubmit"]'.</msg>
+<status status="PASS" starttime="20201110 22:50:33.594" endtime="20201110 22:50:34.164"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>id:_ctl0__ctl0_Content_Main_message</arg>
+</arguments>
+<assign>
+<var>${senha}</var>
+</assign>
+<msg timestamp="20201110 22:50:34.190" level="INFO">${senha} = &lt;selenium.webdriver.remote.webelement.WebElement (session="80e3097b4cdabf1c61a052886193dcf4", element="420512fe-b723-4b1e-b958-36dead2b2b9a")&gt;</msg>
+<status status="PASS" starttime="20201110 22:50:34.167" endtime="20201110 22:50:34.191"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${senha.text}</arg>
+<arg>Login Failed: We're sorry, but this username or password was not found in our system. Please try again.</arg>
+</arguments>
+<status status="PASS" starttime="20201110 22:50:34.193" endtime="20201110 22:50:34.216"></status>
+</kw>
+<kw name="Encerra Acesso" library="base" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201110 22:50:34.528" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201110 22:50:34.218" endtime="20201110 22:50:34.528"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201110 22:50:34.529" endtime="20201110 22:50:36.762"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:50:34.217" endtime="20201110 22:50:36.762"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:50:28.507" endtime="20201110 22:50:36.763" critical="yes"></status>
+</test>
+<test id="s1-t5" name="Validando o acesso ao internet banking com conta funcionario com login invalido">
+<kw name="Novo Acesso" library="base" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201110 22:50:36.768" level="INFO">Opening browser 'chrome' to base url 'http://altoromutual.com:8080/ chrome'.</msg>
+<status status="PASS" starttime="20201110 22:50:36.767" endtime="20201110 22:50:41.002"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:50:36.767" endtime="20201110 22:50:41.002"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:AccountLink</arg>
+</arguments>
+<msg timestamp="20201110 22:50:41.004" level="INFO">Clicking element 'id:AccountLink'.</msg>
+<status status="PASS" starttime="20201110 22:50:41.004" endtime="20201110 22:50:41.307"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:uid</arg>
+<arg>xpto@123</arg>
+</arguments>
+<msg timestamp="20201110 22:50:41.311" level="INFO">Typing text 'xpto@123' into text field 'id:uid'.</msg>
+<status status="PASS" starttime="20201110 22:50:41.311" endtime="20201110 22:50:41.437"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:passw</arg>
+<arg>admin</arg>
+</arguments>
+<msg timestamp="20201110 22:50:41.439" level="INFO">Typing text 'admin' into text field 'id:passw'.</msg>
+<status status="PASS" starttime="20201110 22:50:41.438" endtime="20201110 22:50:41.575"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[name="btnSubmit"]</arg>
+</arguments>
+<msg timestamp="20201110 22:50:41.577" level="INFO">Clicking button 'css:input[name="btnSubmit"]'.</msg>
+<status status="PASS" starttime="20201110 22:50:41.576" endtime="20201110 22:50:42.145"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>id:_ctl0__ctl0_Content_Main_message</arg>
+</arguments>
+<assign>
+<var>${login}</var>
+</assign>
+<msg timestamp="20201110 22:50:42.174" level="INFO">${login} = &lt;selenium.webdriver.remote.webelement.WebElement (session="1e276a65364575ab3b20d89df0e6b3d3", element="17ebcc3c-a144-4258-b43d-918995710fe2")&gt;</msg>
+<status status="PASS" starttime="20201110 22:50:42.150" endtime="20201110 22:50:42.174"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${login.text}</arg>
+<arg>Login Failed: We're sorry, but this username or password was not found in our system. Please try again.</arg>
+</arguments>
+<status status="PASS" starttime="20201110 22:50:42.175" endtime="20201110 22:50:42.196"></status>
+</kw>
+<kw name="Encerra Acesso" library="base" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201110 22:50:42.507" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201110 22:50:42.198" endtime="20201110 22:50:42.508"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201110 22:50:42.508" endtime="20201110 22:50:44.741"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:50:42.197" endtime="20201110 22:50:44.741"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:50:36.765" endtime="20201110 22:50:44.742" critical="yes"></status>
+</test>
+<test id="s1-t6" name="Validando o acesso ao internet banking com conta funcionario com login invalido">
+<kw name="Novo Acesso" library="base" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201110 22:50:44.748" level="INFO">Opening browser 'chrome' to base url 'http://altoromutual.com:8080/ chrome'.</msg>
+<status status="PASS" starttime="20201110 22:50:44.748" endtime="20201110 22:50:49.114"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:50:44.747" endtime="20201110 22:50:49.115"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:LoginLink</arg>
+</arguments>
+<msg timestamp="20201110 22:50:49.117" level="INFO">Clicking element 'id:LoginLink'.</msg>
+<status status="PASS" starttime="20201110 22:50:49.116" endtime="20201110 22:50:49.424"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:uid</arg>
+<arg>xpto@123</arg>
+</arguments>
+<msg timestamp="20201110 22:50:49.427" level="INFO">Typing text 'xpto@123' into text field 'id:uid'.</msg>
+<status status="PASS" starttime="20201110 22:50:49.426" endtime="20201110 22:50:49.552"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:passw</arg>
+<arg>admin</arg>
+</arguments>
+<msg timestamp="20201110 22:50:49.553" level="INFO">Typing text 'admin' into text field 'id:passw'.</msg>
+<status status="PASS" starttime="20201110 22:50:49.552" endtime="20201110 22:50:49.691"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[name="btnSubmit"]</arg>
+</arguments>
+<msg timestamp="20201110 22:50:49.692" level="INFO">Clicking button 'css:input[name="btnSubmit"]'.</msg>
+<status status="PASS" starttime="20201110 22:50:49.692" endtime="20201110 22:50:50.183"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>id:_ctl0__ctl0_Content_Main_message</arg>
+</arguments>
+<assign>
+<var>${login}</var>
+</assign>
+<msg timestamp="20201110 22:50:50.206" level="INFO">${login} = &lt;selenium.webdriver.remote.webelement.WebElement (session="93bb91dbc5e3a04f01c0664b9602317a", element="1a061359-48f0-42a5-8879-dec5ef70fddf")&gt;</msg>
+<status status="PASS" starttime="20201110 22:50:50.184" endtime="20201110 22:50:50.206"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${login.text}</arg>
+<arg>Login Failed: We're sorry, but this username or password was not found in our system. Please try again.</arg>
+</arguments>
+<status status="PASS" starttime="20201110 22:50:50.207" endtime="20201110 22:50:50.231"></status>
+</kw>
+<kw name="Encerra Acesso" library="base" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201110 22:50:50.523" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201110 22:50:50.233" endtime="20201110 22:50:50.523"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201110 22:50:50.523" endtime="20201110 22:50:52.775"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:50:50.232" endtime="20201110 22:50:52.775"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:50:44.746" endtime="20201110 22:50:52.776" critical="yes"></status>
+</test>
+<test id="s1-t7" name="Validando o acesso ao internet banking com conta funcionario com login e senha invalidas">
+<kw name="Novo Acesso" library="base" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201110 22:50:52.780" level="INFO">Opening browser 'chrome' to base url 'http://altoromutual.com:8080/ chrome'.</msg>
+<status status="PASS" starttime="20201110 22:50:52.780" endtime="20201110 22:50:57.082"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:50:52.779" endtime="20201110 22:50:57.082"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:AccountLink</arg>
+</arguments>
+<msg timestamp="20201110 22:50:57.084" level="INFO">Clicking element 'id:AccountLink'.</msg>
+<status status="PASS" starttime="20201110 22:50:57.084" endtime="20201110 22:50:57.385"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:uid</arg>
+<arg>xpto@123</arg>
+</arguments>
+<msg timestamp="20201110 22:50:57.392" level="INFO">Typing text 'xpto@123' into text field 'id:uid'.</msg>
+<status status="PASS" starttime="20201110 22:50:57.391" endtime="20201110 22:50:57.521"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:passw</arg>
+<arg>aooba</arg>
+</arguments>
+<msg timestamp="20201110 22:50:57.521" level="INFO">Typing text 'aooba' into text field 'id:passw'.</msg>
+<status status="PASS" starttime="20201110 22:50:57.521" endtime="20201110 22:50:57.665"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[name="btnSubmit"]</arg>
+</arguments>
+<msg timestamp="20201110 22:50:57.666" level="INFO">Clicking button 'css:input[name="btnSubmit"]'.</msg>
+<status status="PASS" starttime="20201110 22:50:57.665" endtime="20201110 22:50:58.198"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>id:_ctl0__ctl0_Content_Main_message</arg>
+</arguments>
+<assign>
+<var>${falha}</var>
+</assign>
+<msg timestamp="20201110 22:50:58.227" level="INFO">${falha} = &lt;selenium.webdriver.remote.webelement.WebElement (session="369c34a775ca5a85789bad2f0a2176c7", element="cd3c3f11-f67a-4174-89c7-add9fdbdaa24")&gt;</msg>
+<status status="PASS" starttime="20201110 22:50:58.199" endtime="20201110 22:50:58.227"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${falha.text}</arg>
+<arg>Login Failed: We're sorry, but this username or password was not found in our system. Please try again.</arg>
+</arguments>
+<status status="PASS" starttime="20201110 22:50:58.228" endtime="20201110 22:50:58.251"></status>
+</kw>
+<kw name="Encerra Acesso" library="base" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201110 22:50:58.565" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201110 22:50:58.252" endtime="20201110 22:50:58.565"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201110 22:50:58.565" endtime="20201110 22:51:00.830"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:50:58.251" endtime="20201110 22:51:00.830"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:50:52.778" endtime="20201110 22:51:00.831" critical="yes"></status>
+</test>
+<test id="s1-t8" name="Validando o acesso ao internet banking com conta funcionario com login e senha invalidas">
+<kw name="Novo Acesso" library="base" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201110 22:51:00.836" level="INFO">Opening browser 'chrome' to base url 'http://altoromutual.com:8080/ chrome'.</msg>
+<status status="PASS" starttime="20201110 22:51:00.835" endtime="20201110 22:51:05.193"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:51:00.835" endtime="20201110 22:51:05.193"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:LoginLink</arg>
+</arguments>
+<msg timestamp="20201110 22:51:05.195" level="INFO">Clicking element 'id:LoginLink'.</msg>
+<status status="PASS" starttime="20201110 22:51:05.194" endtime="20201110 22:51:05.515"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:uid</arg>
+<arg>xpto@123</arg>
+</arguments>
+<msg timestamp="20201110 22:51:05.517" level="INFO">Typing text 'xpto@123' into text field 'id:uid'.</msg>
+<status status="PASS" starttime="20201110 22:51:05.516" endtime="20201110 22:51:05.645"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:passw</arg>
+<arg>aooba</arg>
+</arguments>
+<msg timestamp="20201110 22:51:05.646" level="INFO">Typing text 'aooba' into text field 'id:passw'.</msg>
+<status status="PASS" starttime="20201110 22:51:05.646" endtime="20201110 22:51:05.790"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[name="btnSubmit"]</arg>
+</arguments>
+<msg timestamp="20201110 22:51:05.792" level="INFO">Clicking button 'css:input[name="btnSubmit"]'.</msg>
+<status status="PASS" starttime="20201110 22:51:05.791" endtime="20201110 22:51:06.465"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>id:_ctl0__ctl0_Content_Main_message</arg>
+</arguments>
+<assign>
+<var>${falha}</var>
+</assign>
+<msg timestamp="20201110 22:51:06.497" level="INFO">${falha} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8712afc3fccbe244ca29c92287f257c0", element="07be1ee0-38e2-470e-a1dd-a814860651fe")&gt;</msg>
+<status status="PASS" starttime="20201110 22:51:06.467" endtime="20201110 22:51:06.498"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${falha.text}</arg>
+<arg>Login Failed: We're sorry, but this username or password was not found in our system. Please try again.</arg>
+</arguments>
+<status status="PASS" starttime="20201110 22:51:06.498" endtime="20201110 22:51:06.527"></status>
+</kw>
+<kw name="Encerra Acesso" library="base" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201110 22:51:06.842" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201110 22:51:06.529" endtime="20201110 22:51:06.842"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201110 22:51:06.843" endtime="20201110 22:51:09.046"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:51:06.528" endtime="20201110 22:51:09.046"></status>
+</kw>
+<status status="PASS" starttime="20201110 22:51:00.833" endtime="20201110 22:51:09.047" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20201110 22:49:55.756" endtime="20201110 22:51:09.051"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0">Critical Tests</stat>
+<stat pass="8" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="8" fail="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20201110 22:50:28.506" level="WARN">Multiple test cases with name 'Validando o acesso ao internet banking com conta funcionario com senha invalida' executed in test suite 'Login'.</msg>
+<msg timestamp="20201110 22:50:44.744" level="WARN">Multiple test cases with name 'Validando o acesso ao internet banking com conta funcionario com login invalido' executed in test suite 'Login'.</msg>
+<msg timestamp="20201110 22:51:00.833" level="WARN">Multiple test cases with name 'Validando o acesso ao internet banking com conta funcionario com login e senha invalidas' executed in test suite 'Login'.</msg>
+</errors>
+</robot>
