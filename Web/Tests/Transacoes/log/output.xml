@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.3 on win32)" generated="20201112 22:13:35.618" rpa="false">
+<suite id="s1" name="Transacoes" source="c:\Altoro\Web\Tests\Transacoes.robot">
+<test id="s1-t1" name="Validando o saldo em conta corrente Corporate">
+<kw name="Novo Acesso" library="base" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201112 22:13:36.104" level="INFO">Opening browser 'chrome' to base url 'http://altoromutual.com:8080/ chrome'.</msg>
+<status status="PASS" starttime="20201112 22:13:36.103" endtime="20201112 22:13:41.102"></status>
+</kw>
+<status status="PASS" starttime="20201112 22:13:36.102" endtime="20201112 22:13:41.102"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:AccountLink</arg>
+</arguments>
+<msg timestamp="20201112 22:13:41.104" level="INFO">Clicking element 'id:AccountLink'.</msg>
+<status status="PASS" starttime="20201112 22:13:41.103" endtime="20201112 22:13:41.432"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:uid</arg>
+<arg>admin</arg>
+</arguments>
+<msg timestamp="20201112 22:13:41.442" level="INFO">Typing text 'admin' into text field 'id:uid'.</msg>
+<status status="PASS" starttime="20201112 22:13:41.441" endtime="20201112 22:13:41.565"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:passw</arg>
+<arg>admin</arg>
+</arguments>
+<msg timestamp="20201112 22:13:41.566" level="INFO">Typing text 'admin' into text field 'id:passw'.</msg>
+<status status="PASS" starttime="20201112 22:13:41.566" endtime="20201112 22:13:41.703"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[name="btnSubmit"]</arg>
+</arguments>
+<msg timestamp="20201112 22:13:41.705" level="INFO">Clicking button 'css:input[name="btnSubmit"]'.</msg>
+<status status="PASS" starttime="20201112 22:13:41.704" endtime="20201112 22:13:42.240"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>id:listAccounts</arg>
+<arg>800000</arg>
+</arguments>
+<msg timestamp="20201112 22:13:42.242" level="INFO">Selecting options from selection list 'id:listAccounts' by value 800000.</msg>
+<status status="PASS" starttime="20201112 22:13:42.241" endtime="20201112 22:13:42.313"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id:btnGetAccount</arg>
+</arguments>
+<msg timestamp="20201112 22:13:42.314" level="INFO">Clicking button 'id:btnGetAccount'.</msg>
+<status status="PASS" starttime="20201112 22:13:42.314" endtime="20201112 22:13:42.854"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>xpath:.//td[contains(.,'Available balance')]</arg>
+</arguments>
+<assign>
+<var>${saldo}</var>
+</assign>
+<msg timestamp="20201112 22:13:42.884" level="INFO">${saldo} = &lt;selenium.webdriver.remote.webelement.WebElement (session="88e77eff6c3c986105d68a519a4b7d5e", element="bdbb669d-3b72-4109-83a3-a4fcc9ab1300")&gt;</msg>
+<status status="PASS" starttime="20201112 22:13:42.855" endtime="20201112 22:13:42.884"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${saldo.text}</arg>
+</arguments>
+<msg timestamp="20201112 22:13:46.010" level="INFO">Account History - 800000 Corporate
+Balance Detail
+       800000 Corporate
+800001 Checking
+       Amount
+Ending balance as of 11/12/20 7:13 PM $52394583.61
+Available balance $52394583.61
+
+10 Most Recent Transactions
+Date Description Amount
+2020-11-12 Withdrawal -$200.00
+
+Credits
+Account Date Description Amount
+1001160140 12/29/2004 Paycheck 1200
+1001160140 01/12/2005 Paycheck 1200
+1001160140 01/29/2005 Paycheck 1200
+1001160140 02/12/2005 Paycheck 1200
+1001160140 03/01/2005 Paycheck 1200
+1001160140 03/15/2005 Paycheck 1200
+1001160140 03/31/2005 Paycheck 1200
+1001160140 04/14/2005 Paycheck 1200
+1001160140 05/01/2005 Paycheck 1200
+1001160140 05/15/2005 Paycheck 1200
+1001160140 05/31/2005 Paycheck 1200
+1001160140 06/14/2005 Paycheck 1200
+1001160140 07/01/2005 Paycheck 1200
+1001160140 07/15/2005 Paycheck 1200
+1001160140 08/01/2005 Paycheck 1200
+1001160140 08/15/2005 Paycheck 1200
+1001160140 08/29/2005 Paycheck 1200
+1001160140 09/12/2005 Paycheck 1200
+1001160140 09/29/2005 Paycheck 1200
+1001160140 10/13/2005 Paycheck 1200
+1001160140 10/29/2005 Paycheck 1200
+1001160140 11/12/2005 Paycheck 1200
+1001160140 11/29/2005 Paycheck 1200
+1001160140 12/13/2005 Paycheck 1200
+1001160140 12/29/2005 Paycheck 1200
+1001160140 01/12/2006 Paycheck 1200
+1001160140 01/29/2006 Paycheck 1200
+1001160140 02/12/2006 Paycheck 1200
+1001160140 03/01/2006 Paycheck 1200
+1001160140 03/15/2006 Paycheck 1200
+1001160140 03/31/2006 Paycheck 1200
+1001160140 04/14/2006 Paycheck 1200
+1001160140 05/01/2006 Paycheck 1200
+1001160140 05/15/2006 Paycheck 1200
+1001160140 05/31/2006 Paycheck 1200
+1001160140 06/14/2006 Paycheck 1200
+1001160140 07/01/2006 Paycheck 1200
+1001160140 07/15/2006 Paycheck 1200
+1001160140 08/01/2006 Paycheck 1200
+1001160140 08/15/2006 Paycheck 1200
+1001160140 08/29/2006 Paycheck 1200
+1001160140 09/12/2006 Paycheck 1200
+1001160140 09/29/2006 Paycheck 1200
+1001160140 10/13/2006 Paycheck 1200
+1001160140 10/29/2006 Paycheck 1200
+1001160140 11/12/2006 Paycheck 1200
+1001160140 11/29/2006 Paycheck 1200
+1001160140 12/13/2006 Paycheck 1200
+1001160140 12/29/2006 Paycheck 1200
+1001160140 01/12/2007 Paycheck 1200
+1001160140 01/29/2007 Paycheck 1200
+1001160140 02/12/2007 Paycheck 1200
+1001160140 03/01/2007 Paycheck 1200
+1001160140 03/15/2007 Paycheck 1200
+1001160140 03/31/2007 Paycheck 1200
+1001160140 04/14/2007 Paycheck 1200
+1001160140 05/01/2007 Paycheck 1200
+1001160140 05/15/2007 Paycheck 1200
+1001160140 05/31/2007 Paycheck 1200
+1001160140 06/14/2007 Paycheck 1200
+1001160140 07/01/2007 Paycheck 1200
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit -99999999
+1001160140 09/05/2007 Balance Deposit 99999999
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 99999999
+1001160140 09/05/2007 Balance Deposit -99999999
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit -3500
+1001160140 09/05/2007 Balance Deposit -34
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 99999999
+1001160140 09/05/2007 Balance Deposit -99999999
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 99999999
+1001160140 09/05/2007 Balance Deposit -99999999
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 09/05/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 99999999
+1001160140 12/17/2007 Balance Deposit -99999999
+1001160140 12/17/2007 Balance Deposit 4294967297
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 100
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 99999999
+1001160140 12/17/2007 Balance Deposit -99999999
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 100
+1001160140 12/17/2007 Balance Deposit 10000000
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit 1234
+1001160140 12/17/2007 Balance Deposit -99999999
+1001160140 12/17/2007 Balance Deposit 99999999
+1001160140 12/17/2007 Balance Deposit 4294967297
+1001160140 12/17/2007 Balance Deposit 1234
+
+Debits
+Account Date Description Amount
+1001160140 01/17/2005 Withdrawal 2.85
+1001160140 01/25/2005 Rent 800
+1001160140 01/25/2005 Electric Bill 45.25
+1001160140 01/25/2005 Heating 29.99
+1001160140 01/29/2005 Transfer to Savings 321
+1001160140 01/29/2005 Groceries 19.6
+1001160140 01/30/2005 Entertainment 44.16
+1001160140 02/01/2005 Car Repair 83.05
+1001160140 02/03/2005 Entertainment 29.54
+1001160140 02/04/2005 Withdrawal 81.57
+1001160140 02/06/2005 Groceries 90.26
+1001160140 02/12/2005 Groceries 85.12
+1001160140 02/23/2005 Withdrawal 32.31
+1001160140 02/25/2005 Rent 800
+1001160140 02/25/2005 Electric Bill 45.25
+1001160140 02/25/2005 Heating 29.99
+1001160140 03/01/2005 Transfer to Savings 1060
+1001160140 03/04/2005 Transportation 15.47
+1001160140 03/05/2005 Withdrawal 63.13
+1001160140 03/10/2005 Cleaners 7.27
+1001160140 03/18/2005 Entertainment 10.6
+1001160140 03/26/2005 Clothing 60.83
+1001160140 03/28/2005 Rent 800
+1001160140 03/28/2005 Electric Bill 45.25
+1001160140 03/28/2005 Heating 29.99
+1001160140 03/31/2005 Transfer to Savings 1367
+1001160140 03/31/2005 Clothing 54.8
+1001160140 04/05/2005 Car Repair 61.94
+1001160140 04/13/2005 Liquer Lyles 17.33
+1001160140 04/26/2005 Car Repair 85.81
+1001160140 04/27/2005 Rent 800
+1001160140 04/27/2005 Electric Bill 45.25
+1001160140 04/27/2005 Heating 29.99
+1001160140 05/01/2005 Transfer to Savings 1305
+1001160140 05/08/2005 Quick Mart 32.29
+1001160140 05/16/2005 Quick Mart 79.9
+1001160140 05/20/2005 Entertainment 7.36
+1001160140 05/25/2005 Groceries 0.96
+1001160140 05/28/2005 Rent 800
+1001160140 05/28/2005 Electric Bill 45.25
+1001160140 05/28/2005 Heating 29.99
+1001160140 05/31/2005 Transfer to Savings 1404
+1001160140 06/03/2005 Entertainment 83.35
+1001160140 06/23/2005 Cleaners 69.57
+1001160140 06/27/2005 Clothing 64.58
+1001160140 06/27/2005 Rent 800
+1001160140 06/27/2005 Electric Bill 45.25
+1001160140 06/27/2005 Heating 29.99
+1001160140 07/01/2005 Transfer to Savings 1307
+1001160140 07/02/2005 Withdrawal 2.02
+1001160140 07/03/2005 Dinner 53.87
+1001160140 07/04/2005 Entertainment 50.88
+1001160140 07/05/2005 Dinner 93.15
+1001160140 07/06/2005 Entertainment 12.84
+1001160140 07/10/2005 Clothing 50.28
+1001160140 07/12/2005 Dinner 63.01
+1001160140 07/13/2005 Cleaners 3.01
+1001160140 07/18/2005 Groceries 92.24
+1001160140 07/25/2005 Dinner 93.52
+1001160140 07/28/2005 Rent 800
+1001160140 07/28/2005 Electric Bill 45.25
+1001160140 07/28/2005 Heating 29.99
+1001160140 08/01/2005 Transfer to Savings 1010
+1001160140 08/01/2005 Entertainment 64.33
+1001160140 08/02/2005 Cleaners 31.75
+1001160140 08/13/2005 Liquer Lyles 24.88
+1001160140 08/14/2005 Quick Mart 62.82
+1001160140 08/20/2005 Entertainment 59.07
+1001160140 08/25/2005 Liquer Lyles 50.01
+1001160140 08/28/2005 Rent 800
+1001160140 08/28/2005 Electric Bill 45.25
+1001160140 08/28/2005 Heating 29.99
+1001160140 08/29/2005 Transfer to Savings 1232
+1001160140 08/30/2005 Car Repair 82.86
+1001160140 09/04/2005 Clothing 88.11
+1001160140 09/05/2005 Transportation 66.9
+1001160140 09/11/2005 Dinner 96.63
+1001160140 09/25/2005 Rent 800
+1001160140 09/25/2005 Electric Bill 45.25
+1001160140 09/25/2005 Heating 29.99
+1001160140 09/29/2005 Transfer to Savings 1191
+1001160140 10/03/2005 Withdrawal 91.57
+1001160140 10/05/2005 Cleaners 91.13
+1001160140 10/10/2005 Groceries 63.04
+1001160140 10/12/2005 Withdrawal 24.05
+1001160140 10/16/2005 Entertainment 9.48
+1001160140 10/17/2005 Clothing 74.69
+1001160140 10/20/2005 Withdrawal 48.53
+1001160140 10/22/2005 Quick Mart 99.76
+1001160140 10/26/2005 Withdrawal 51.29
+1001160140 10/26/2005 Rent 800
+1001160140 10/26/2005 Electric Bill 45.25
+1001160140 10/26/2005 Heating 29.99
+1001160140 10/29/2005 Transfer to Savings 971
+1001160140 11/08/2005 Entertainment 72.92
+1001160140 11/11/2005 Liquer Lyles 12.78
+1001160140 11/17/2005 Withdrawal 18.72
+1001160140 11/19/2005 Groceries 8.86
+1001160140 11/20/2005 Dinner 26.36
+1001160140 11/25/2005 Rent 800
+1001160140 11/25/2005 Electric Bill 45.25
+1001160140 11/25/2005 Heating 29.99
+1001160140 11/29/2005 Transfer to Savings 1385
+1001160140 12/14/2005 Car Repair 47.54
+1001160140 12/20/2005 Quick Mart 28.23
+1001160140 12/26/2005 Withdrawal 92.77
+1001160140 12/26/2005 Rent 800
+1001160140 12/26/2005 Electric Bill 45.25
+1001160140 12/26/2005 Heating 29.99
+1001160140 12/29/2005 Transfer to Savings 1356
+1001160140 12/29/2005 Entertainment 80.01
+1001160140 01/04/2006 Withdrawal 64.23
+1001160140 01/06/2006 Liquer Lyles 62.87
+1001160140 01/09/2006 Clothing 12.56
+1001160140 01/17/2006 Quick Mart 81.39
+1001160140 01/22/2006 Liquer Lyles 36.59
+1001160140 01/23/2006 Withdrawal 26.08
+1001160140 01/25/2006 Rent 800
+1001160140 01/25/2006 Electric Bill 45.25
+1001160140 01/25/2006 Heating 29.99
+1001160140 01/29/2006 Transfer to Savings 1161
+1001160140 01/29/2006 Liquer Lyles 91.15
+1001160140 02/04/2006 Withdrawal 45.58
+1001160140 02/05/2006 Transportation 91.99
+1001160140 02/08/2006 Quick Mart 97.53
+1001160140 02/11/2006 Transportation 4.74
+1001160140 02/25/2006 Rent 800
+1001160140 02/25/2006 Electric Bill 45.25
+1001160140 02/25/2006 Heating 29.99
+1001160140 03/01/2006 Transfer to Savings 1194
+1001160140 03/05/2006 Car Repair 32.92
+1001160140 03/11/2006 Withdrawal 78.58
+1001160140 03/16/2006 Withdrawal 54.94
+1001160140 03/22/2006 Dinner 72.14
+1001160140 03/28/2006 Rent 800
+1001160140 03/28/2006 Electric Bill 45.25
+1001160140 03/28/2006 Heating 29.99
+1001160140 03/31/2006 Transfer to Savings 1286
+1001160140 04/03/2006 Transportation 73.5
+1001160140 04/07/2006 Liquer Lyles 41.76
+1001160140 04/09/2006 Car Repair 55.05
+1001160140 04/11/2006 Transportation 99.56
+1001160140 04/15/2006 Entertainment 52.62
+1001160140 04/16/2006 Dinner 33.56
+1001160140 04/17/2006 Entertainment 64.53
+1001160140 04/27/2006 Rent 800
+1001160140 04/27/2006 Electric Bill 45.25
+1001160140 04/27/2006 Heating 29.99
+1001160140 05/01/2006 Transfer to Savings 1104
+1001160140 05/18/2006 Dinner 4.83
+1001160140 05/20/2006 Groceries 95.23
+1001160140 05/27/2006 Groceries 43.8
+1001160140 05/28/2006 Rent 800
+1001160140 05/28/2006 Electric Bill 45.25
+1001160140 05/28/2006 Heating 29.99
+1001160140 05/31/2006 Transfer to Savings 1381
+1001160140 06/01/2006 Cleaners 0.68
+1001160140 06/02/2006 Transportation 5.23
+1001160140 06/04/2006 Liquer Lyles 53.2
+1001160140 06/05/2006 Car Repair 0.87
+1001160140 06/14/2006 Transportation 76.01
+1001160140 06/23/2006 Withdrawal 85.44
+1001160140 06/27/2006 Rent 800
+1001160140 06/27/2006 Electric Bill 45.25
+1001160140 06/27/2006 Heating 29.99
+1001160140 07/01/2006 Transfer to Savings 1303
+1001160140 07/05/2006 Cleaners 38.06
+1001160140 07/07/2006 Clothing 29.85
+1001160140 07/09/2006 Withdrawal 0.51
+1001160140 07/15/2006 Withdrawal 93.11
+1001160140 07/16/2006 Clothing 51.72
+1001160140 07/23/2006 Withdrawal 91.97
+1001160140 07/28/2006 Rent 800
+1001160140 07/28/2006 Electric Bill 45.25
+1001160140 07/28/2006 Heating 29.99
+1001160140 08/01/2006 Transfer to Savings 1220
+1001160140 08/01/2006 Clothing 38.1
+1001160140 08/10/2006 Withdrawal 7.94
+1001160140 08/14/2006 Transportation 89.31
+1001160140 08/16/2006 Dinner 98.27
+1001160140 08/23/2006 Clothing 28.25
+1001160140 08/26/2006 Dinner 69.23
+1001160140 08/28/2006 Rent 800
+1001160140 08/28/2006 Electric Bill 45.25
+1001160140 08/28/2006 Heating 29.99
+1001160140 08/29/2006 Transfer to Savings 1194
+1001160140 08/30/2006 Car Repair 77.78
+1001160140 09/02/2006 Entertainment 36.62
+1001160140 09/04/2006 Dinner 95.82
+1001160140 09/20/2006 Transportation 39.37
+1001160140 09/23/2006 Transportation 36.08
+1001160140 09/25/2006 Rent 800
+1001160140 09/25/2006 Electric Bill 45.25
+1001160140 09/25/2006 Heating 29.99
+1001160140 09/29/2006 Transfer to Savings 1239
+1001160140 10/07/2006 Transportation 31.39
+1001160140 10/14/2006 Entertainment 51.08
+1001160140 10/15/2006 Car Repair 53.02
+1001160140 10/18/2006 Clothing 5.65
+1001160140 10/20/2006 Quick Mart 25.51
+1001160140 10/22/2006 Transportation 52.42
+1001160140 10/24/2006 Entertainment 42.72
+1001160140 10/26/2006 Rent 800
+1001160140 10/26/2006 Electric Bill 45.25
+1001160140 10/26/2006 Heating 29.99
+1001160140 10/29/2006 Transfer to Savings 1263
+1001160140 10/29/2006 Entertainment 69.3
+1001160140 11/14/2006 Withdrawal 93.69
+1001160140 11/16/2006 Groceries 84.99
+1001160140 11/23/2006 Quick Mart 95.17
+1001160140 11/25/2006 Rent 800
+1001160140 11/25/2006 Electric Bill 45.25
+1001160140 11/25/2006 Heating 29.99
+1001160140 11/29/2006 Transfer to Savings 1181
+1001160140 12/22/2006 Withdrawal 29.57
+1001160140 12/26/2006 Rent 800
+1001160140 12/26/2006 Electric Bill 45.25
+1001160140 12/26/2006 Heating 29.99
+1001160140 12/29/2006 Transfer to Savings 1496
+1001160140 12/30/2006 Transportation 13.4
+1001160140 01/03/2007 Dinner 22.81
+1001160140 01/05/2007 Withdrawal 8.25
+1001160140 01/06/2007 Car Repair 26.32
+1001160140 01/07/2007 Dinner 58.03
+1001160140 01/10/2007 Withdrawal 4.42
+1001160140 01/11/2007 Withdrawal 72.63
+1001160140 01/14/2007 Withdrawal 60.42
+1001160140 01/24/2007 Clothing 15.99
+1001160140 01/25/2007 Rent 800
+1001160140 01/25/2007 Electric Bill 45.25
+1001160140 01/25/2007 Heating 29.99
+1001160140 01/29/2007 Transfer to Savings 1242
+1001160140 01/31/2007 Liquer Lyles 76.07
+1001160140 02/07/2007 Withdrawal 97.4
+1001160140 02/14/2007 Clothing 26.91
+1001160140 02/25/2007 Liquer Lyles 0.35
+1001160140 02/25/2007 Rent 800
+1001160140 02/25/2007 Electric Bill 45.25
+1001160140 02/25/2007 Heating 29.99
+1001160140 03/01/2007 Transfer to Savings 1324
+1001160140 03/02/2007 Transportation 29.74
+1001160140 03/03/2007 Quick Mart 75.29
+1001160140 03/04/2007 Groceries 72.8
+1001160140 03/05/2007 Cleaners 12.1
+1001160140 03/14/2007 Transportation 60.71
+1001160140 03/15/2007 Entertainment 96.09
+1001160140 03/16/2007 Withdrawal 70.12
+1001160140 03/18/2007 Quick Mart 64.94
+1001160140 03/21/2007 Withdrawal 43.19
+1001160140 03/22/2007 Groceries 2.68
+1001160140 03/25/2007 Quick Mart 95.4
+1001160140 03/26/2007 Transportation 63.33
+1001160140 03/28/2007 Rent 800
+1001160140 03/28/2007 Electric Bill 45.25
+1001160140 03/28/2007 Heating 29.99
+1001160140 03/31/2007 Transfer to Savings 838
+1001160140 04/04/2007 Transportation 61.69
+1001160140 04/06/2007 Dinner 0.52
+1001160140 04/07/2007 Car Repair 83.15
+1001160140 04/09/2007 Groceries 17.3
+1001160140 04/21/2007 Groceries 20.48
+1001160140 04/27/2007 Rent 800
+1001160140 04/27/2007 Electric Bill 45.25
+1001160140 04/27/2007 Heating 29.99
+1001160140 05/01/2007 Transfer to Savings 1342
+1001160140 05/17/2007 Transportation 48.31
+1001160140 05/18/2007 Car Repair 96.88
+1001160140 05/20/2007 Clothing 52.43
+1001160140 05/28/2007 Rent 800
+1001160140 05/28/2007 Electric Bill 45.25
+1001160140 05/28/2007 Heating 29.99
+1001160140 05/31/2007 Transfer to Savings 1327
+1001160140 06/02/2007 Withdrawal 94.12
+1001160140 06/06/2007 Withdrawal 52.54
+1001160140 06/12/2007 Groceries 30.71
+1001160140 06/17/2007 Dinner 65.66
+1001160140 06/18/2007 Groceries 76.13
+1001160140 06/20/2007 Quick Mart 89.5
+1001160140 06/21/2007 Withdrawal 25.83
+1001160140 06/22/2007 Withdrawal 32.63
+1001160140 06/25/2007 Dinner 53.39
+1001160140 06/26/2007 Car Repair 84.44
+1001160140 06/27/2007 Rent 800
+1001160140 06/27/2007 Electric Bill 45.25
+1001160140 06/27/2007 Heating 29.99
+1001160140 07/01/2007 Transfer to Savings 920
+1001160140 07/01/2007 Entertainment 0.4
+1001160140 07/06/2007 Entertainment 33.26
+1001160140 07/09/2007 Dinner 1.66
+1001160140 09/05/2007 Balance Withdrawal 232323
+1001160140 09/05/2007 Balance Withdrawal 111111111111
+1001160140 09/05/2007 Balance Withdrawal 111111111111
+1001160140 09/05/2007 Balance Withdrawal -3500
+1001160140 09/05/2007 Balance Withdrawal -3500
+1001160140 09/05/2007 Balance Withdrawal -34
+1001160140 09/05/2007 Balance Withdrawal -1E+20
+1001160140 09/05/2007 Balance Withdrawal 787554
+1001160140 09/05/2007 Balance Withdrawal 1000
+1001160140 09/05/2007 Balance Withdrawal 1000
+1001160140 09/05/2007 Balance Withdrawal 1000
+1001160140 09/05/2007 Balance Withdrawal 1000
+1001160140 09/05/2007 Balance Withdrawal -99999999
+1001160140 09/05/2007 Balance Withdrawal 99999999
+1001160140 09/05/2007 Balance Withdrawal 1000
+1001160140 12/17/2007 Balance Withdrawal 3333
+1001160140 12/17/2007 Balance Withdrawal 3333
+1001160140 12/17/2007 Balance Withdrawal 3333
+1001160140 12/17/2007 Balance Withdrawal 3333
+1001160140 12/17/2007 Balance Withdrawal 100
+1001160140 12/17/2007 Balance Withdrawal 200
+1001160140 12/17/2007 Balance Withdrawal 2.35678E+36
+1001160140 12/17/2007 Balance Withdrawal 100
+1001160140 12/17/2007 Balance Withdrawal 10000000
+1001160140 12/17/2007 Balance Withdrawal 1E+15
+1001160140 12/17/2007 Balance Withdrawal 10000000000
+1001160140 12/17/2007 Balance Withdrawal 100</msg>
+<status status="PASS" starttime="20201112 22:13:42.885" endtime="20201112 22:13:46.012"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${saldo.text}</arg>
+</arguments>
+<status status="PASS" starttime="20201112 22:13:46.014" endtime="20201112 22:13:49.555"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${saldo.text}</arg>
+<arg>$52394583.61</arg>
+</arguments>
+<status status="PASS" starttime="20201112 22:13:49.556" endtime="20201112 22:13:52.582"></status>
+</kw>
+<kw name="Encerra Acesso" library="base" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201112 22:13:52.866" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201112 22:13:52.584" endtime="20201112 22:13:52.867"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201112 22:13:52.867" endtime="20201112 22:13:55.133"></status>
+</kw>
+<status status="PASS" starttime="20201112 22:13:52.583" endtime="20201112 22:13:55.133"></status>
+</kw>
+<status status="PASS" starttime="20201112 22:13:36.101" endtime="20201112 22:13:55.134" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20201112 22:13:35.622" endtime="20201112 22:13:55.137"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Transacoes">Transacoes</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
