@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.3 on win32)" generated="20201114 23:01:57.932" rpa="false">
+<suite id="s1" name="Transferencia" source="c:\Altoro\Web\Tests\Transferencia.robot">
+<test id="s1-t1" name="Efetuando transferencia da conta Corporate para conta Checking">
+<kw name="Novo Acesso" library="base" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201114 23:01:58.413" level="INFO">Opening browser 'chrome' to base url 'http://altoromutual.com:8080/ chrome'.</msg>
+<status status="PASS" starttime="20201114 23:01:58.412" endtime="20201114 23:02:02.849"></status>
+</kw>
+<status status="PASS" starttime="20201114 23:01:58.412" endtime="20201114 23:02:02.849"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:AccountLink</arg>
+</arguments>
+<msg timestamp="20201114 23:02:02.851" level="INFO">Clicking element 'id:AccountLink'.</msg>
+<status status="PASS" starttime="20201114 23:02:02.850" endtime="20201114 23:02:03.158"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:uid</arg>
+<arg>admin</arg>
+</arguments>
+<msg timestamp="20201114 23:02:03.160" level="INFO">Typing text 'admin' into text field 'id:uid'.</msg>
+<status status="PASS" starttime="20201114 23:02:03.159" endtime="20201114 23:02:03.288"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:passw</arg>
+<arg>admin</arg>
+</arguments>
+<msg timestamp="20201114 23:02:03.289" level="INFO">Typing text 'admin' into text field 'id:passw'.</msg>
+<status status="PASS" starttime="20201114 23:02:03.288" endtime="20201114 23:02:03.425"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[name="btnSubmit"]</arg>
+</arguments>
+<msg timestamp="20201114 23:02:03.426" level="INFO">Clicking button 'css:input[name="btnSubmit"]'.</msg>
+<status status="PASS" starttime="20201114 23:02:03.425" endtime="20201114 23:02:04.091"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://a[@href="/bank/transfer.jsp"]</arg>
+</arguments>
+<msg timestamp="20201114 23:02:04.092" level="INFO">Clicking element 'xpath://a[@href="/bank/transfer.jsp"]'.</msg>
+<status status="PASS" starttime="20201114 23:02:04.092" endtime="20201114 23:02:04.491"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>id:fromAccount</arg>
+<arg>800000</arg>
+</arguments>
+<msg timestamp="20201114 23:02:04.493" level="INFO">Selecting options from selection list 'id:fromAccount' by value 800000.</msg>
+<status status="PASS" starttime="20201114 23:02:04.493" endtime="20201114 23:02:04.568"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>id:toAccount</arg>
+<arg>800001</arg>
+</arguments>
+<msg timestamp="20201114 23:02:04.569" level="INFO">Selecting options from selection list 'id:toAccount' by value 800001.</msg>
+<status status="PASS" starttime="20201114 23:02:04.569" endtime="20201114 23:02:04.680"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:transferAmount</arg>
+<arg>200</arg>
+</arguments>
+<msg timestamp="20201114 23:02:04.682" level="INFO">Typing text '200' into text field 'id:transferAmount'.</msg>
+<status status="PASS" starttime="20201114 23:02:04.681" endtime="20201114 23:02:04.823"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id:transfer</arg>
+</arguments>
+<msg timestamp="20201114 23:02:04.825" level="INFO">Clicking button 'id:transfer'.</msg>
+<status status="PASS" starttime="20201114 23:02:04.825" endtime="20201114 23:02:05.244"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>id:_ctl0__ctl0_Content_Main_postResp</arg>
+</arguments>
+<assign>
+<var>${ted}</var>
+</assign>
+<msg timestamp="20201114 23:02:05.270" level="INFO">${ted} = &lt;selenium.webdriver.remote.webelement.WebElement (session="9913942e59ef942048b3c0b88a392e48", element="d3ddccdb-e5fe-48c6-8117-3ad410377e26")&gt;</msg>
+<status status="PASS" starttime="20201114 23:02:05.245" endtime="20201114 23:02:05.270"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${ted.text}</arg>
+</arguments>
+<msg timestamp="20201114 23:02:05.294" level="INFO">200.0 was successfully transferred from Account 800000 into Account 800001 at 11/14/20 8:02 PM.</msg>
+<status status="PASS" starttime="20201114 23:02:05.271" endtime="20201114 23:02:05.294"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ted.text}</arg>
+</arguments>
+<status status="PASS" starttime="20201114 23:02:05.295" endtime="20201114 23:02:05.309"></status>
+</kw>
+<kw name="Encerra Acesso" library="base" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201114 23:02:05.621" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201114 23:02:05.311" endtime="20201114 23:02:05.622"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201114 23:02:05.622" endtime="20201114 23:02:07.859"></status>
+</kw>
+<status status="PASS" starttime="20201114 23:02:05.310" endtime="20201114 23:02:07.860"></status>
+</kw>
+<status status="PASS" starttime="20201114 23:01:58.410" endtime="20201114 23:02:07.861" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Efetuando transferencia da conta Checking para conta Corporate">
+<kw name="Novo Acesso" library="base" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20201114 23:02:07.866" level="INFO">Opening browser 'chrome' to base url 'http://altoromutual.com:8080/ chrome'.</msg>
+<status status="PASS" starttime="20201114 23:02:07.866" endtime="20201114 23:02:12.129"></status>
+</kw>
+<status status="PASS" starttime="20201114 23:02:07.865" endtime="20201114 23:02:12.129"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:AccountLink</arg>
+</arguments>
+<msg timestamp="20201114 23:02:12.131" level="INFO">Clicking element 'id:AccountLink'.</msg>
+<status status="PASS" starttime="20201114 23:02:12.130" endtime="20201114 23:02:12.437"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:uid</arg>
+<arg>admin</arg>
+</arguments>
+<msg timestamp="20201114 23:02:12.440" level="INFO">Typing text 'admin' into text field 'id:uid'.</msg>
+<status status="PASS" starttime="20201114 23:02:12.439" endtime="20201114 23:02:12.566"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:passw</arg>
+<arg>admin</arg>
+</arguments>
+<msg timestamp="20201114 23:02:12.567" level="INFO">Typing text 'admin' into text field 'id:passw'.</msg>
+<status status="PASS" starttime="20201114 23:02:12.567" endtime="20201114 23:02:12.708"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:input[name="btnSubmit"]</arg>
+</arguments>
+<msg timestamp="20201114 23:02:12.710" level="INFO">Clicking button 'css:input[name="btnSubmit"]'.</msg>
+<status status="PASS" starttime="20201114 23:02:12.709" endtime="20201114 23:02:13.355"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://a[@href="/bank/transfer.jsp"]</arg>
+</arguments>
+<msg timestamp="20201114 23:02:13.356" level="INFO">Clicking element 'xpath://a[@href="/bank/transfer.jsp"]'.</msg>
+<status status="PASS" starttime="20201114 23:02:13.355" endtime="20201114 23:02:13.785"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>id:fromAccount</arg>
+<arg>800001</arg>
+</arguments>
+<msg timestamp="20201114 23:02:13.788" level="INFO">Selecting options from selection list 'id:fromAccount' by value 800001.</msg>
+<status status="PASS" starttime="20201114 23:02:13.788" endtime="20201114 23:02:13.901"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>id:toAccount</arg>
+<arg>800000</arg>
+</arguments>
+<msg timestamp="20201114 23:02:13.902" level="INFO">Selecting options from selection list 'id:toAccount' by value 800000.</msg>
+<status status="PASS" starttime="20201114 23:02:13.901" endtime="20201114 23:02:13.970"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:transferAmount</arg>
+<arg>300</arg>
+</arguments>
+<msg timestamp="20201114 23:02:13.971" level="INFO">Typing text '300' into text field 'id:transferAmount'.</msg>
+<status status="PASS" starttime="20201114 23:02:13.971" endtime="20201114 23:02:14.114"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id:transfer</arg>
+</arguments>
+<msg timestamp="20201114 23:02:14.116" level="INFO">Clicking button 'id:transfer'.</msg>
+<status status="PASS" starttime="20201114 23:02:14.115" endtime="20201114 23:02:14.474"></status>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>id:_ctl0__ctl0_Content_Main_postResp</arg>
+</arguments>
+<assign>
+<var>${ted}</var>
+</assign>
+<msg timestamp="20201114 23:02:14.504" level="INFO">${ted} = &lt;selenium.webdriver.remote.webelement.WebElement (session="26c4529da021aecbb557ed6f03a1df36", element="faf44341-a46c-4996-8323-c036d2efcfc4")&gt;</msg>
+<status status="PASS" starttime="20201114 23:02:14.482" endtime="20201114 23:02:14.504"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${ted.text}</arg>
+</arguments>
+<msg timestamp="20201114 23:02:14.540" level="INFO">300.0 was successfully transferred from Account 800001 into Account 800000 at 11/14/20 8:02 PM.</msg>
+<status status="PASS" starttime="20201114 23:02:14.504" endtime="20201114 23:02:14.541"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ted.text}</arg>
+</arguments>
+<status status="PASS" starttime="20201114 23:02:14.543" endtime="20201114 23:02:14.562"></status>
+</kw>
+<kw name="Encerra Acesso" library="base" type="teardown">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201114 23:02:14.863" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201114 23:02:14.564" endtime="20201114 23:02:14.863"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20201114 23:02:14.863" endtime="20201114 23:02:17.198"></status>
+</kw>
+<status status="PASS" starttime="20201114 23:02:14.563" endtime="20201114 23:02:17.198"></status>
+</kw>
+<status status="PASS" starttime="20201114 23:02:07.864" endtime="20201114 23:02:17.199" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20201114 23:01:57.936" endtime="20201114 23:02:17.202"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" id="s1" name="Transferencia">Transferencia</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
