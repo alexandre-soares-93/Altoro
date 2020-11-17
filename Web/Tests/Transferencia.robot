@@ -31,4 +31,18 @@ Efetuando transferencia da conta Checking para conta Corporate
     Click Button                        id:transfer
     ${ted}                              Get WebElement                  id:_ctl0__ctl0_Content_Main_postResp
     Log                                 ${ted.text}
-    Log To Console                      ${ted.text}               
+    Log To Console                      ${ted.text}
+
+Validando a transferencia da conta Corporate para Checking
+    [Tags]                              confere
+    Click Element                       id:AccountLink
+    Input Text                          id:uid                          admin
+    Input Text                          id:passw                        admin
+    Click Button                        css:input[name="btnSubmit"]
+    Click Element                       xpath://a[@href="/bank/transaction.jsp"]
+    ${debito}                           Get WebElement                  xpath:.//tr[contains(., '2337')]                 
+    Log                                 ${debito.text}
+    Log To Console                      ${debito.text}
+    Should Contain                      ${debito.text}                  2020-11-14 20:00
+    Should Contain                      ${debito.text}                  -$200.00
+                           
